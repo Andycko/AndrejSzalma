@@ -49,13 +49,13 @@ window.onload = () => {
 
 
     const name = document.querySelector('.heading')
-    name.onmouseover = () => {
-        name.classList.add('animate')
-    }
+    // name.onmouseover = () => {
+    //     name.classList.add('animate')
+    // }
     
-    window.onscroll = (e) => {
-        name.classList.add('animate')
-    }
+    // window.onscroll = (e) => {
+    //     name.classList.add('animate')
+    // }
 
     const soft = document.querySelector('#soft')
     window.onwheel = (e) => {
