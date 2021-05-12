@@ -1,0 +1,251 @@
+.preload
+  -webkit-transition: none !important
+  -moz-transition: none !important
+  -ms-transition: none !important
+  -o-transition: none !important
+
+html, body
+	margin: 0
+	padding: 0
+	position: relative
+header
+	position: relative
+	display: grid
+	grid-template-columns: 100%
+	grid-template-rows: repeat(3, 1fr)
+	flex-direction: column
+	justify-content: center
+	align-items: center
+	width: 100vw
+	height: 100vh
+
+	.heading
+		grid-row: 2/3
+		position: relative
+		text-align: center
+		width: 100%
+		&.animate
+			h1
+				transition: .4s cubic-bezier(.42,0,.58,1)
+			h1:nth-of-type(2)
+				transform: translate(-50%, -53%)
+				animation: text-float-1
+				animation-delay: .5s
+				animation-duration: .9s
+				animation-timing-function: ease-in-out
+				animation-iteration-count: infinite
+				animation-direction: alternate
+			h1:nth-of-type(3)
+				transform: translate(-50%, -56%)
+				transition-delay: .3s
+				animation: text-float-2
+				animation-delay: .7s
+				animation-duration: .9s
+				animation-timing-function: ease-in-out
+				animation-iteration-count: infinite
+				animation-direction: alternate
+			h1:nth-of-type(4)
+				transform: translate(-50%, -59%)
+				transition-delay: .5s
+				animation: text-float-3
+				animation-delay: .9s
+				animation-duration: .9s
+				animation-timing-function: ease-in-out
+				animation-iteration-count: infinite
+				animation-direction: alternate
+
+		h1
+			margin: 0
+			width: 100%
+			color: black
+			font-size: 100px
+			font-family: Agrandir-Grand, sans-serif
+			font-weight: bold
+			position: absolute
+			top: 50%
+			left: 50%
+			transform: translate(-50%,-50%)
+			opacity: .39
+			transition: 1s cubic-bezier(.42,0,.58,1)
+			&:nth-of-type(1)
+				top: unset
+				left: unset
+				transform: unset
+				position: relative
+				opacity: 1
+				z-index: 10
+			&:nth-of-type(2)
+				color: #0A00FF
+				z-index: 9
+			&:nth-of-type(3)
+				color: #FF0000
+				z-index: 8
+			&:nth-of-type(4)
+				color: #1EB70B
+				z-index: 7
+	
+	.socials		
+		grid-row: 3/4
+		text-align: center
+		svg
+			height: 45px
+			width: 45px
+			margin: 0 .5rem
+		a
+			font-size: 0
+			&:nth-of-type(1):hover
+				animation: flicker-red
+				animation-duration: .5s
+				animation-iteration-count: infinite
+				animation-direction: alternate
+			&:nth-of-type(2):hover
+				animation: flicker-green
+				animation-duration: .5s
+				animation-iteration-count: infinite
+				animation-direction: alternate
+			&:nth-of-type(3):hover
+				animation: flicker-blue
+				animation-duration: .5s
+				animation-iteration-count: infinite
+				animation-direction: alternate
+
+@keyframes flicker-green
+	from
+		opacity: 1
+		fill: black
+	30%
+		opacity: 0
+		fill: #1EB70B
+	to
+		opacity: 1
+@keyframes flicker-blue
+	from
+		opacity: 1
+		fill: black
+	30%
+		opacity: 0
+		fill: #0A00FF
+	to
+		opacity: 1
+@keyframes flicker-red
+	from
+		opacity: 1
+		fill: black
+	30%
+		opacity: 0
+		fill: #FF0000
+	to
+		opacity: 1
+		
+@keyframes text-float-1
+	from
+		transform: translate(-50%,-53%)
+	to
+		transform: translate(-50%,-55%)
+@keyframes text-float-2
+	from
+		transform: translate(-50%,-56%)
+	to
+		transform: translate(-50%,-59%)
+@keyframes text-float-3
+	from
+		transform: translate(-50%,-59%)
+	to
+		transform: translate(-50%,-64%)
+
+.vertical-line
+	position: absolute
+	left: 50%
+	top: 0
+	transform: translateX(-50%)
+	width: 10px
+	height: 100%
+	z-index: 1
+.mid-box
+	position: relative
+	width: 250px
+	height: 150px
+	border: 15px solid white
+	display: flex
+	justify-content: center
+	align-items: center
+	z-index: 2
+	h2	
+		font-size: 50px
+		font-family: Agrandir-Grand, sans-serif
+		font-weight: bold
+		text-align: center
+		margin: 0
+
+#web
+	position: relative
+	width: 100vw
+	height: 100vh
+	display: flex
+	justify-content: center
+	align-items: center
+	.vertical-line
+		background: black
+	.mid-box
+		background: black
+		h2
+			color: white
+
+#soft
+	background: black
+	position: absolute
+	bottom: 0
+	z-index: 2
+	clip-path: circle(0px)
+	width: 100vw
+	height: 100vh
+	display: flex
+	justify-content: center
+	align-items: center
+	.bg-text
+		overflow: hidden
+		position: absolute
+		top: 25px
+		left: 25px
+		width: calc(100% - 50px)
+		height: calc(100% - 50px)
+		color: white
+		font-size: 13px
+		opacity: .9
+		font-family: Agrandir
+		font-stretch: extra-condensed
+		font-weight: lighter
+		text-align: justify
+	.vertical-line
+		background: white
+		display: none
+	.mid-box
+		background: white
+		border: none
+		h2
+			color: black
+	h3
+		margin: 0
+		position: absolute
+		font-family: Agrandir-Grand, sans-serif
+		font-weight: bold
+		font-size: 110px
+		color: black
+		&:nth-of-type(1)
+			top: 12%
+			left: 20%
+		&:nth-of-type(2)
+			top: 35%
+			left: 5%
+		&:nth-of-type(3)
+			bottom: 15%
+			left: 10%
+		&:nth-of-type(4)
+			top: 12%
+			right: 5%
+		&:nth-of-type(5)
+			top: 45%
+			right: 10%
+		&:nth-of-type(6)
+			bottom: 10%
+			right: 20%
